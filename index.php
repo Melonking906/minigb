@@ -17,10 +17,15 @@ $guest_n = $guest_e = $guest_u = $guest_c = "";
 // Username GET. If it's not set, it will load the one set by default for this GB.
 $user = $_GET['usr'] ?? $default_user;
 
-// If another username is specified in the "?usr=" GET, the database variable will be renamed.
+// If another username is specified in the "?usr=" GET, the database and CSS style variable will be renamed.
 if(isset($_GET['usr'])) {
     $database = "entries_$user";
 }
+
+if(isset($_GET['usr'])) {
+    $style = "style_$user";
+}
+
 
 // Error messages
 $messages = array(
