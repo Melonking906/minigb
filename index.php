@@ -2,6 +2,8 @@
 
 session_start();
 
+include "cfg.php";
+
 /*
 =============================================================================
 | Based in the "Flat-Text File Guestbook" PHP script by "taufik-nurrohman". |
@@ -12,12 +14,6 @@ session_start();
 // Default variable values
 $guest_n = $guest_e = $guest_u = $guest_c = "";
 
-// Default username (replace this to your username)
-$default_user = "";
-
-// Default entries TXT database file
-$database = "entries_$default_user";
-
 // Username GET. If it's not set, it will load the one set by default for this GB.
 $user = $_GET['usr'] ?? $default_user;
 
@@ -25,12 +21,6 @@ $user = $_GET['usr'] ?? $default_user;
 if(isset($_GET['usr'])) {
     $database = "entries_$user";
 }
-
-// Max length for posts
-$max_length_name = 40;
-$max_length_email = 250;
-$max_length_url = 250;
-$max_length_comment = 520;
 
 // Error messages
 $messages = array(
@@ -82,7 +72,7 @@ if($x - $y > 0) {
 			<meta name="robots" content="noindex, nofollow">
 			<meta charset="UTF-8">
 
-			<link rel="stylesheet" href="style_<?php echo $user ?>.css">
+			<link rel="stylesheet" href="<?php echo $style ?>.css">
 
 			<script type="text/javascript">
 			function setSmiley(which) {
