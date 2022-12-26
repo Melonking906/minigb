@@ -19,13 +19,9 @@ $user = $_GET['usr'] ?? $default_user;
 
 // If another username is specified in the "?usr=" GET, the database and CSS style variable will be renamed.
 if(isset($_GET['usr'])) {
-    $database = "entries_$user";
+	$database = "entries_$user";
+	$style = "style_$user";
 }
-
-if(isset($_GET['usr'])) {
-    $style = "style_$user";
-}
-
 
 // Error messages
 $messages = array(
@@ -34,10 +30,10 @@ $messages = array(
 	'url_invalid' => 'ERROR: Invalid URL format (use required: http://example.org/).',
 	'email_invalid' => 'ERROR: Invalid Email format (use required: example@example.org).',
 	'captcha_invalid' => 'ERROR: Invalid Math CAPTCHA.',
-	'max_length_name' => 'ERROR: Maximum character length for guest name is ' . $max_length_name  . ' .',
-	'max_length_email' => 'ERROR: Maximum character length for guest Email is ' . $max_length_url  . ' .',
-	'max_length_url' => 'ERROR: Maximum character length for guest URL is ' . $max_length_url  . ' .',
-	'max_length_message' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment . ' .',
+	'max_length_name' => 'ERROR: Maximum character length for guest name is ' . $max_length_name  . '.',
+	'max_length_email' => 'ERROR: Maximum character length for guest Email is ' . $max_length_url  . '.',
+	'max_length_url' => 'ERROR: Maximum character length for guest URL is ' . $max_length_url  . '.',
+	'max_length_message' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment . '.',
 );
 
 function create_or_update_file($file_path, $data) {
