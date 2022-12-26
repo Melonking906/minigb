@@ -12,8 +12,19 @@ session_start();
 // Default variable values
 $guest_n = $guest_e = $guest_u = $guest_c = "";
 
-// Entries TXT database namefile
-$database = 'entries';
+// Default username
+$default_user = "geckof";
+
+// Default entries TXT database file
+$database = "entries_$default_user";
+
+// Username GET. If it's not set, it will load the one set by default for this GB.
+$user = $_GET['usr'] ?? $default_user;
+
+// If another username is specified in the "?usr=" GET, the database variable will be renamed.
+if(isset($_GET['usr'])) {
+    $database = "entries_$user";
+}
 
 // Max length for posts
 $max_length_name = 40;
@@ -23,7 +34,7 @@ $max_length_comment = 520;
 
 // Error messages
 $messages = array(
-	'database_missing' => 'ERROR: Database not found. Created one. Please reload the page.',
+	'database_missing' => 'ERROR: Database file not found for this user.',
 	'input_empty' => 'ERROR: Name and Comment cannot be empty!',
 	'url_invalid' => 'ERROR: Invalid URL format (use required: http://example.org/).',
 	'email_invalid' => 'ERROR: Invalid Email format (use required: example@example.org).',
@@ -40,12 +51,8 @@ function create_or_update_file($file_path, $data) {
 }
 
 if(!file_exists($database . '.txt')) {
-	// Prevent guest to create new database via `data=database-XXX` in URL
-	// Only administrator can do this by editing the `$database` value
-	if(!isset($_GET['data'])) {
-		create_or_update_file($database . '.txt', "");
-		echo "<div class='alertBox-Error'>" . $messages['database_missing'] . "</div>";
-	}
+	// Prevent guest to create new database via GET.
+	echo $messages['database_missing'];
 	return false;
 } else {
 	$old_data = file_get_contents($database . '.txt');
@@ -75,7 +82,7 @@ if($x - $y > 0) {
 			<meta name="robots" content="noindex, nofollow">
 			<meta charset="UTF-8">
 
-			<link rel="stylesheet" href="style.css">
+			<link rel="stylesheet" href="style_<?php echo $user ?>.css">
 
 			<script type="text/javascript">
 			function setSmiley(which) {
@@ -140,7 +147,7 @@ if($x - $y > 0) {
 
 		// If all the above is OK, then send.
 		if ($error === "") {
-			header("Location:" . $_SERVER['PHP_SELF'] . "");
+			header("Location:" . $_SERVER['PHP_SELF'] . "?usr=$user");
         		$new_data = $guest_n. "<||>" . $guest_e . "<||>" . $guest_u . "<||>" . $guest_c . "<||>" . "" . "<||>" . $guest_date . "<||>" . $guest_unix_ts;
 
         		if (!empty($old_data)) {
@@ -165,7 +172,7 @@ if($x - $y > 0) {
 
 ?>
 
-			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="signForm">
+			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); echo "?usr=$user"; ?>" method="post" name="signForm">
 				<div class="signF1">
 					<input type="name" name="guest_n" style="width: 135px" placeholder="Your name" maxlength="<?php echo $max_length_name ?>" oninput="this.value=this.value.slice(0,this.maxLength)"> <input type="email" name="guest_e" style="width: 163px;" placeholder="Your e-mail (optional)" maxlength="<?php echo $max_length_email ?>" oninput="this.value=this.value.slice(0,this.maxLength)">
 				</div>
@@ -241,6 +248,10 @@ if(!empty($data)) {
 			echo "          <p><i>Owner reply: " . htmlspecialchars($item[4]) . "</i></p>\n";
 		} else {
 			// nothing.
+		}
+
+		if(empty($item[0])){
+			echo "";
 		}
 
 		echo "        </div>\n\n";
