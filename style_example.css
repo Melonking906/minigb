@@ -1,0 +1,85 @@
+html, body {
+	background-color: white;
+	color: black;
+}
+
+textarea, input {
+	border: 2px ridge black;
+	background-color: white;
+	color: black;
+	font-family: monospace;
+}
+
+button {
+	border: 2px ridge black;
+	background-color: white;
+	color: black;
+	font-family: monospace;
+}
+
+button:hover {
+	border: 2px ridge lightblue;
+	background-color: #1f5e5d;
+	color: white;
+	font-family: monospace;
+}
+
+
+hr {
+	border: 1px ridge black;
+	margin-top: 1.3em;
+}
+
+a, a:visited {
+	color: #ed9f11;
+}
+
+a:hover {
+	color: blue;
+}
+
+.signF2 {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.signF4 {
+	margin-top: 5px;
+	margin-bottom: -5px;
+}
+
+.signF5 {
+	margin-top: 10px;
+}
+
+.signF6 {
+	margin-top: 10px;
+	margin-bottom: -5px;
+}
+
+.alertBox-Success {
+	border-radius: 5px;
+	border: 2px ridge limegreen;
+	padding: 5px 5px;
+	margin-bottom: 10px;
+}
+
+.alertBox-Error {
+	border-radius: 5px;
+	border: 2px ridge red;
+	color: red;
+	padding: 5px 5px;
+	margin-bottom: 10px;
+}
+
+.guestComment {
+	word-break: break-all; /* for fix large comments that brokes the page */
+}
+
+.date {
+	font-size: small;
+}
+
+.icons {
+	margin-bottom: -3.8px;
+}

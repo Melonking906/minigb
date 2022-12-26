@@ -1,0 +1,1 @@
+minigb<||><||>https://github.com/ThatRoboticFish/minigb<||>Welcome to your minigb! This is a test and welcome message, if you want to remove or edit it, go to &quot;entries_username.txt&quot; (where username is your username you chose for this script). You can also customize the style of this guestbook in &quot;style_username.css&quot;.<||><||>2022-12-26 06:12:41<||>1672057781
