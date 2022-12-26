@@ -5,15 +5,15 @@ session_start();
 /*
 =============================================================================
 | Based in the "Flat-Text File Guestbook" PHP script by "taufik-nurrohman". |
-| Readapted for my personal website by Gecko.                               |
+| Readapted for my personal website by GeckoF.                              |
 =============================================================================
 */
 
 // Default variable values
 $guest_n = $guest_e = $guest_u = $guest_c = "";
 
-// Default username
-$default_user = "geckof";
+// Default username (replace this to your username)
+$default_user = "";
 
 // Default entries TXT database file
 $database = "entries_$default_user";
@@ -39,10 +39,10 @@ $messages = array(
 	'url_invalid' => 'ERROR: Invalid URL format (use required: http://example.org/).',
 	'email_invalid' => 'ERROR: Invalid Email format (use required: example@example.org).',
 	'captcha_invalid' => 'ERROR: Invalid Math CAPTCHA.',
-	'max_length_name' => 'ERROR: Maximum character length for guest name is ' . $max_length_name,
-	'max_length_email' => 'ERROR: Maximum character length for guest Email is ' . $max_length_url,
-	'max_length_url' => 'ERROR: Maximum character length for guest URL is ' . $max_length_url,
-	'max_length_message' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment,
+	'max_length_name' => 'ERROR: Maximum character length for guest name is ' . $max_length_name  . ' .',
+	'max_length_email' => 'ERROR: Maximum character length for guest Email is ' . $max_length_url  . ' .',
+	'max_length_url' => 'ERROR: Maximum character length for guest URL is ' . $max_length_url  . ' .',
+	'max_length_message' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment . ' .',
 );
 
 function create_or_update_file($file_path, $data) {
