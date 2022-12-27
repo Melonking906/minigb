@@ -3,7 +3,7 @@
 /* minigb included variables file */
 
 // Default username (replace this to your username)
-$default_user = "geckof";
+$default_user = "example";
 
 // Default entries TXT database file
 $database = "entries_$default_user";
