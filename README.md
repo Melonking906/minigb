@@ -8,7 +8,7 @@ Basic, simple and buggy (lol) retro-styled PHP7 guestbook script with """multi-u
 
 # Installation
 
-# Pre-requirements
+## Pre-requirements
 
 * PHP 7.x
 * A webserver w/ PHP support (e.g. [Apache](https://httpd.apache.org/), [nginx](https://nginx.org/), [lighttpd](https://lighttpd.net/))
