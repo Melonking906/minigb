@@ -83,3 +83,11 @@ a:hover {
 .icons {
 	margin-bottom: -3.8px;
 }
+
+.software {
+	margin-top: 12px;
+}
+
+.software>p {
+	margin-top: 2px;
+}
