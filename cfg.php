@@ -17,4 +17,10 @@ $max_length_email = 250;
 $max_length_url = 250;
 $max_length_comment = 520;
 
+// Show minigb 88x31 button and version info
+$powered_by = 1;
+
+// Smileys directory
+$smileys_dir = "img/smileys";
+
 ?>
