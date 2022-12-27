@@ -177,16 +177,16 @@ if($x - $y > 0) {
 				</div>
 
 				<div class="signF4">
-					<a href='javascript:setSmiley(":)")'><img src='img/smil/smile.gif' alt=':)' border='0'></a>
-					<a href='javascript:setSmiley(":(")'><img src='img/smil/sad.gif' alt=':<' border='0'></a>
-					<a href='javascript:setSmiley(":D")'><img src='img/smil/grin.gif' alt=':D' border='0'></a>
-					<a href='javascript:setSmiley(":P")'><img src='img/smil/stick.gif' alt=':P' border='0'></a>
-					<a href='javascript:setSmiley(";)")'><img src='img/smil/wink.gif' alt=';)' border='0'></a>
-					<a href='javascript:setSmiley("B)")'><img src='img/smil/cool.gif' alt='B)' border='0'></a>	
-					<a href='javascript:setSmiley(":o")'><img src='img/smil/gasp.gif' alt=':o' border='0'></a>
-					<a href='javascript:setSmiley(":eek:")'><img src='img/smil/eek.gif' alt=':eek:' border='0'></a>
-					<a href='javascript:setSmiley(":crazy:")'><img src='img/smil/crazy.gif' alt=':crazy:' border='0'></a>
-					<a href='javascript:setSmiley(":love:")'><img src='img/smil/love.gif' alt=':love:' border='0'></a>
+					<a href='javascript:setSmiley(":)")'><img src='<?php echo $smileys_dir ?>/smile.gif' alt=':)' border='0'></a>
+					<a href='javascript:setSmiley(":(")'><img src='<?php echo $smileys_dir ?>/sad.gif' alt=':<' border='0'></a>
+					<a href='javascript:setSmiley(":D")'><img src='<?php echo $smileys_dir ?>/grin.gif' alt=':D' border='0'></a>
+					<a href='javascript:setSmiley(":P")'><img src='<?php echo $smileys_dir ?>/stick.gif' alt=':P' border='0'></a>
+					<a href='javascript:setSmiley(";)")'><img src='<?php echo $smileys_dir ?>/wink.gif' alt=';)' border='0'></a>
+					<a href='javascript:setSmiley("B)")'><img src='<?php echo $smileys_dir ?>/cool.gif' alt='B)' border='0'></a>	
+					<a href='javascript:setSmiley(":o")'><img src='<?php echo $smileys_dir ?>/gasp.gif' alt=':o' border='0'></a>
+					<a href='javascript:setSmiley(":eek:")'><img src='<?php echo $smileys_dir ?>/eek.gif' alt=':eek:' border='0'></a>
+					<a href='javascript:setSmiley(":crazy:")'><img src='<?php echo $smileys_dir ?>/crazy.gif' alt=':crazy:' border='0'></a>
+					<a href='javascript:setSmiley(":love:")'><img src='<?php echo $smileys_dir ?>/love.gif' alt=':love:' border='0'></a>
 				</div>
 
 				<div class="signF5">
