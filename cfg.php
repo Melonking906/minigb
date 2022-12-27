@@ -3,7 +3,7 @@
 /* minigb included variables file */
 
 // Default username (replace this to your username)
-$default_user = "";
+$default_user = "geckof";
 
 // Default entries TXT database file
 $database = "entries_$default_user";
@@ -22,5 +22,12 @@ $powered_by = 1;
 
 // Smileys directory
 $smileys_dir = "img/smileys";
+
+// Enable or disable new entries (this will be applied to all users)
+$disable_entries = 0;
+
+// Version information
+$mgb_ver = "0.01a";
+$mgb_verdate = "27 Dec 2022";
 
 ?>
