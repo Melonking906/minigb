@@ -23,19 +23,18 @@ button:hover {
 	color: white;
 	font-family: monospace;
 }
-
-
+ 
 hr {
 	border: 1px ridge black;
 	margin-top: 1.3em;
 }
 
 a, a:visited {
-	color: #ed9f11;
+	color: blue;
 }
 
 a:hover {
-	color: blue;
+	color: red;
 }
 
 .signF2 {
