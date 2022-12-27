@@ -1,4 +1,4 @@
-# gecko-minigb (aka microgb)
+# gecko-minigb (aka minigb)
 
 ![minigb button](https://github.com/ThatRoboticFish/minigb/blob/main/img/minigb.gif?raw=true)
 
