@@ -4,6 +4,8 @@
 
 Basic, simple and buggy (lol) retro-styled PHP7 guestbook script with """multi-user""" support and without mySQL. Based in the [Flat-File Guestbook Script](https://github.com/taufik-nurrohman/flat-file-guestbook) code and on IglooGB.
 
+NOTE: This script is currently in alpha and is not recommended for use on large websites.
+
 ![minigb example screenshot // GeckoF's gb](https://geckof.dimension.sh/img/misc/2022-12-27_181517.png)
 
 # Installation
@@ -23,4 +25,4 @@ To add a new user you will need to create a new file called "entries_newusername
 
 If you are on UNIX, you must make the entries file writeable and readable for everyone (0666), otherwise PHP will not be able to write new entries.
 
-*WARNING: This script currently has a bug with the entries if you modify the text file of the entries incorrectly and that makes show all the entries of your guestbook incorrectly. If something like this happens, I recommend that you make backups of your entries file.*
+*WARNING: This script currently has a small problem displaying entries if the text file containing them (entries_username.txt) is edited incorrectly or in other character set than UTF-8. I recommend that you back up your entries before modifying or deleting any lines.*
