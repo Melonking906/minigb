@@ -210,6 +210,7 @@ if($x - $y > 0) {
 
 if(!empty($data)) {
 
+	$data = trim($data, "\r");
 	$data = explode("\r", $data);
 
 	for($i = 0; $i < count($data); $i++) {
