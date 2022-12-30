@@ -24,20 +24,6 @@ if(isset($_GET['usr'])) {
 	$style = "style_$user";
 }
 
-// Error messages
-$messages = array(
-	'database_missing' => 'ERROR: Database file not found for this user.',
-	'input_empty' => 'ERROR: Name and Comment cannot be empty!',
-	'url_invalid' => 'ERROR: Invalid URL format (use required: <b>http://example.org/</b>).',
-	'email_invalid' => 'ERROR: Invalid Email format (use required: <b>example@example.org</b>).',
-	'captcha_invalid' => 'ERROR: Invalid Math CAPTCHA.',
-	'disabled_entries' => 'ERROR: The webmaster of this guestbook disabled new entries.',
-	'max_length_name' => 'ERROR: Maximum character length for guest name is ' . $max_length_name  . '.',
-	'max_length_email' => 'ERROR: Maximum character length for guest email is ' . $max_length_url  . '.',
-	'max_length_url' => 'ERROR: Maximum character length for guest URL is ' . $max_length_url  . '.',
-	'max_length_message' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment . '.',
-);
-
 function create_or_update_file($file_path, $data) {
 	$handle = fopen($file_path, 'w') or die('Cannot open file: ' . $file_path);
 	fwrite($handle, $data);
