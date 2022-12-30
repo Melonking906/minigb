@@ -31,6 +31,36 @@ $messages = array(
 	'max_length_message' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment . '.',
 );
 
+// Smileys list
+// (if you are going to add a new one, remember also to add its image name in the array below and respect the order, otherwise the smiley replacement will work incorrectly)
+$smileys = array(
+	":)",
+	":(",
+	":D",
+	":P",
+	";)",
+	"B)",
+	":O",
+	":eek:",
+	":crazy:",
+	":love:"
+);
+
+// Smileys image names
+// (if you are going to add one here, make sure they are in GIF format (or in any other in case if you edited the smileys image format in the minigb script))
+$smileys_img = array(
+	"smile",
+	"sad",
+	"grin",
+	"stick",
+	"wink",
+	"cool",
+	"gasp",
+	"eek",
+	"crazy",
+	"love"
+);
+
 // Show minigb 88x31 button and version info
 $powered_by = 1;
 
