@@ -227,16 +227,9 @@ if(!empty($data)) {
 		<?php
 
 		// Smileys replacement
-		$item[3] = str_replace(":)","<img src='$smileys_dir/smile.gif' border='0' align='abdsmiddle'>",$item[3]);
-		$item[3] = str_replace(":(","<img src='$smileys_dir/sad.gif' border='0' align='abdsmiddle'>",$item[3]);
-		$item[3] = str_replace(":o","<img src='$smileys_dir/gasp.gif' border='0' align='abdsmiddle'>",$item[3]);
-		$item[3] = str_replace(":D","<img src='$smileys_dir/grin.gif' border='0' align='abdsmiddle'>",$item[3]);	
-		$item[3] = str_replace(":P","<img src='$smileys_dir/stick.gif' border='0' align='abdsmiddle'>",$item[3]);
-		$item[3] = str_replace(";)","<img src='$smileys_dir/wink.gif' border='0' align='abdsmiddle'>",$item[3]);
-		$item[3] = str_replace("B)","<img src='$smileys_dir/cool.gif' border='0' align='abdsmiddle'>",$item[3]);
-		$item[3] = str_replace(":eek:","<img src='$smileys_dir/eek.gif' border='0' align='abdsmiddle'>",$item[3]);
-		$item[3] = str_replace(":crazy:","<img src='$smileys_dir/crazy.gif' border='0' align='abdsmiddle'>",$item[3]);
-		$item[3] = str_replace(":love:","<img src='$smileys_dir/love.gif' border='0' align='abdsmiddle'>",$item[3]);
+		for ($f = 0; $f < count($smileys); $f++) {
+			$item[3] = str_replace("$smileys[$f]", "<img src='$smileys_dir/$smileys_img[$f].gif' border='0' align='abdsmiddle'>", $item[3]);
+		}
 
 		echo "          <p>" . $item[3] . "</p>\n";
 
