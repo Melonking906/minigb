@@ -228,6 +228,11 @@ if(!empty($data)) {
 
 		// Smileys replacement
 		for ($f = 0; $f < count($smileys); $f++) {
+			// Detects if a smiley is written in uppercase (e.g.: ":P" and ":O") and convert it to lowercase
+			if (strtoupper($smileys[$f])) {
+				$item[3] = str_replace(strtoupper($smileys[$f]), strtolower($smileys[$f]), $item[3]);
+			}
+
 			$item[3] = str_replace("$smileys[$f]", "<img src='$smileys_dir/$smileys_img[$f].gif' border='0' align='abdsmiddle'>", $item[3]);
 		}
 
