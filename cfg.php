@@ -32,15 +32,15 @@ $messages = array(
 );
 
 // Smileys list
-// (if you are going to add a new one, remember also to add its image name in the array below and respect the order, otherwise the smiley replacement will work incorrectly)
+// (if you are going to add a new one, do it on lowercase and remember also to add its image name in the array below and respect the order, otherwise the smiley replacement will work incorrectly)
 $smileys = array(
 	":)",
 	":(",
-	":D",
-	":P",
+	":d",
+	":p",
 	";)",
-	"B)",
-	":O",
+	"b)",
+	":o",
 	":eek:",
 	":crazy:",
 	":love:"
