@@ -57,6 +57,8 @@ if($x - $y > 0) {
 <!DOCTYPE html>
 	<html>
 		<head>
+			<title><?php echo $user ?>'s guestbook (gecko-minigb v<?php echo $mgb_ver ?>)</title>
+
 			<meta name="robots" content="noindex, nofollow">
 			<meta charset="UTF-8">
 
