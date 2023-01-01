@@ -228,15 +228,17 @@ if(!empty($data)) {
 			// Detects if a smiley is written in uppercase (e.g.: ":P" and ":O") and convert it to lowercase
 			if (strtoupper($smileys[$f])) {
 				$item[3] = str_replace(strtoupper($smileys[$f]), strtolower($smileys[$f]), $item[3]);
+				$item[4] = str_replace(strtoupper($smileys[$f]), strtolower($smileys[$f]), $item[4]);
 			}
 
-			$item[3] = str_replace("$smileys[$f]", "<img src='$smileys_dir/$smileys_img[$f].gif' border='0' align='abdsmiddle'>", $item[3]);
+			$item[3] = str_replace($smileys[$f], "<img src='$smileys_dir/$smileys_img[$f].gif' border='0' align='abdsmiddle'>", $item[3]);
+			$item[4] = str_replace($smileys[$f], "<img src='$smileys_dir/$smileys_img[$f].gif' border='0' align='abdsmiddle'>", $item[4]);
 		}
 
 		echo "          <p>" . $item[3] . "</p>\n";
 
 		if(!empty($item[4])) {
-			echo "          <p><i>Owner reply: " . htmlspecialchars($item[4]) . "</i></p>\n";
+			echo "          <p><i>Owner reply: " . $item[4] . "</i></p>\n";
 		} else {
 			// nothing.
 		}
