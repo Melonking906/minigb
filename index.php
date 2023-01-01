@@ -132,7 +132,7 @@ if($x - $y > 0) {
 
 		// If all the above is OK, then send.
 		if ($error === "") {
-			header("Location:" . $_SERVER['PHP_SELF'] . "?usr=$user");
+			header("Location:" . $_SERVER['PHP_SELF'] . "?usr=$user&posted=1");
         		$new_data = $guest_n. "<||>" . $guest_e . "<||>" . $guest_u . "<||>" . $guest_c . "<||>" . "" . "<||>" . $guest_date . "<||>" . $guest_unix_ts;
 
         		if (!empty($old_data)) {
@@ -142,6 +142,13 @@ if($x - $y > 0) {
         		}
 		} else {
 			echo $error;
+		}
+	}
+	
+	// Display an success message if message was sent correctly
+	if ($_GET['posted'] > 0) {
+		if ($error === "") {
+			echo "<div class='alertBox-Success'>" . $messages['posted_message'] . "</div>";
 		}
 	}
  
