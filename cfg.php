@@ -61,11 +61,11 @@ $smileys_img = array(
 	"love"
 );
 
-// Show minigb 88x31 button and version info
-$powered_by = 1;
-
 // Smileys directory
 $smileys_dir = "img/smileys";
+
+// Show minigb 88x31 button and version info
+$powered_by = 1;
 
 // Enable or disable new entries (this will be applied to all users)
 $disable_entries = 0;
