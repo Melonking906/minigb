@@ -31,6 +31,8 @@ Remember to set the permissions of the entries file to 0666 if you are on UNIX o
 
 # Replies
 
-To leave a reply to a guest's message, go to your entries text file database and after the guest's comment field you will find an empty one (e.g. <||>Guest Comment<||><||>) where the guest's comment replies will be stored. Just add some text inside that empty field and save the file.
+To leave a reply to a guest's message, go to your entries text file database and after the guest's comment field you will find an empty one (e.g. <||>Guest Comment<||><||>) where the guest's comment replies will be stored. Just add some text inside that empty field and save the file. It should look something like this:
 
 ![Demo Comment/Reply](https://geckof.dimension.sh/img/misc/minigb_demo_reply.jpg)
+
+An example of an comment reply can be found in the default entries text file database "entries_example.txt".
