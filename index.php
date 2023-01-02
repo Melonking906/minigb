@@ -165,7 +165,7 @@ if($x - $y > 0) {
 		}
 	}
  
-	// Removing  redundant HTML characters if any exist.
+	// Removing redundant HTML characters if any exist.
 	function send_input($post_input) {
 		$post_input = preg_replace("/\r|\n/", " ", $post_input);
 
@@ -193,7 +193,7 @@ if($x - $y > 0) {
 				<div class="signF4">
 				<?php
 				for ($f = 0; $f < count($smileys); $f++) {
-					echo "<a href='javascript:setSmiley(&quot;$smileys[$f]&quot;)'><img src='$smileys_dir/$smileys_img[$f].gif' alt='$smileys[$f]' border='0'></a> ";
+					echo "<a href='javascript:setSmiley(&quot;$smileys[$f]&quot;)'><img src='$smileys_dir/$smileys_img[$f].gif' alt='$smileys[$f]' border='0'></a>\n";
 				}
 				?>
 				</div>
@@ -218,9 +218,10 @@ if(!empty($data)) {
 	for($i = 0; $i < count($data); $i++) {
 		$item = explode("<||>", $data[$i]);
 
+		// Uncomment for debug array values.
 		//echo var_dump($item);
 
-		echo "        <div class='guestComment' id='guest-" . $item[6] . "'>";
+		echo "<div class='guestComment' id='guest-" . $item[6] . "'>";
 
 		?>
 
@@ -229,7 +230,7 @@ if(!empty($data)) {
 		<?php
 			if($item[2] === "") {
 			} else {
-				echo "(<a href='" . $item[2] . "' rel='nofollow' target='_blank'><img src='img/icons/world.png' class='icons'></a>)";
+				echo " (<a href='" . $item[2] . "' rel='nofollow' target='_blank'><img src='img/icons/world.png' class='icons'></a>)";
 			}
 
 			if($item[1] === "") {
@@ -254,29 +255,29 @@ if(!empty($data)) {
 			$item[4] = str_replace($smileys[$f], "<img src='$smileys_dir/$smileys_img[$f].gif' border='0' align='abdsmiddle'>", $item[4]);
 		}
 
-		echo "          <p>" . $item[3] . "</p>\n";
+		echo "<p>" . $item[3] . "</p>\n";
 
 		if(!empty($item[4])) {
-			echo "          <p><i>Owner reply: " . $item[4] . "</i></p>\n";
+			echo "<p><i>Owner reply: " . $item[4] . "</i></p>\n";
 		} else {
 			// nothing.
 		}
 
-		echo "        </div>\n\n";
-		echo "        <hr>\n\n";
+		echo "</div>\n\n";
+		echo "<hr>\n\n";
 	}
 
 } else {
-	echo "		<div class='guestComment'>\n";
-	echo "			<p><i>There's not messages yet...</i></p>\n";
-	echo "		</div>\n";
+	echo "<div class='guestComment'>\n";
+	echo "	<p><i>There's not messages yet...</i></p>\n";
+	echo "</div>\n";
 }
 
 if ($powered_by > 0) {
-	echo "		<div class='software'>\n";
-	echo "			<a href='https://github.com/ThatRoboticFish/minigb' target='_blank'><img src='img/minigb.gif'></a>\n";
-	echo "			<p><i>powered by <a href='https://github.com/ThatRoboticFish/minigb' target='_blank'>gecko-minigb v$mgb_ver</a> edited $mgb_verdate</i></p>\n";
-	echo "		</div>\n";
+	echo "<div class='software'>\n";
+	echo "	<a href='https://github.com/ThatRoboticFish/minigb' target='_blank'><img src='img/minigb.gif'></a>\n";
+	echo "	<p><i>powered by <a href='https://github.com/ThatRoboticFish/minigb' target='_blank'>gecko-minigb v$mgb_ver</a> edited $mgb_verdate</i></p>\n";
+	echo "</div>\n";
 } else {
 	// nothing.
 }
