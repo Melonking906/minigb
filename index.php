@@ -32,8 +32,16 @@ function create_or_update_file($file_path, $data) {
 if(!file_exists($database . '.txt')) {
 	echo $messages['database_missing'];
 	return false;
+	exit;
 } else {
 	$old_data = file_get_contents($database . '.txt');
+}
+
+// Kill the script if the database file doesn't have read permissions.
+if (!is_readable($database . '.txt')) {
+	echo $messages['perms_invalid'];
+	return false;
+	exit;
 }
 
 $data = file_get_contents($database . '.txt');
@@ -92,7 +100,7 @@ if($x - $y > 0) {
 			$error .= "<div class='alertBox-Error'>" . $messages['input_empty'] . "</div>";			
 		}
 
-		// URL Validation.
+		// URL validation.
 		if (isset($guest_u) && ! empty($guest_u)) {
 			if (filter_var($guest_u, FILTER_VALIDATE_URL)) {
 				$guest_u = strip_tags($guest_u);
@@ -103,7 +111,7 @@ if($x - $y > 0) {
 			$guest_u = "";
 		}
 
-		// E-Mail Validation.
+		// E-Mail validation.
 		if (isset($guest_e) && ! empty($guest_e)) {
 			if (filter_var($guest_e, FILTER_VALIDATE_EMAIL)) {
 				$guest_e = strip_tags($guest_e);
@@ -130,6 +138,11 @@ if($x - $y > 0) {
 			$error .= "<div class='alertBox-Error'>" . $messages['disabled_entries'] . "</div>";
 		}
 
+		// Reject post if the database file doesn't have write permissions.
+		if (!is_writable($data)) {
+			$error .= "<div class='alertBox-Error'>" . $messages['perms_invalid'] . "</div>";
+		}
+
 		// If all the above is OK, then send.
 		if ($error === "") {
 			header("Location:" . $_SERVER['PHP_SELF'] . "?usr=$user&posted=1");
@@ -145,14 +158,14 @@ if($x - $y > 0) {
 		}
 	}
 	
-	// Display an success message if message was sent correctly
+	// Display an success message if message was sent correctly.
 	if ($_GET['posted'] > 0) {
 		if ($error === "") {
 			echo "<div class='alertBox-Success'>" . $messages['posted_message'] . "</div>";
 		}
 	}
  
-	// Removing the redundant HTML characters if any exist.
+	// Removing  redundant HTML characters if any exist.
 	function send_input($post_input) {
 		$post_input = preg_replace("/\r|\n/", " ", $post_input);
 
@@ -199,7 +212,6 @@ if($x - $y > 0) {
 <?php
 
 if(!empty($data)) {
-
 	$data = trim($data, "\r");
 	$data = explode("\r", $data);
 
