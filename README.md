@@ -21,6 +21,14 @@ After you have done the above, you will need to change your default username in 
 
 When you have done the above, you will be able to visit your guestbook in your web browser by going to the IP address/domain of your web server and on the directory where you have installed your guestbook (example: http://192.168.1.7/gb/).
 
+If you are on UNIX, you must make the entries file writeable and readable for everyone (0666), otherwise PHP will not be able to write new entries and you will get errors.
+
+# New users
+
 To add a new user you will need to create a new file called "entries_newusername.txt" and "style_newusername.css" (where newusername will be the username of the new user). You will be able to visit them by adding a (?usr=newusername) in the URL of their guestbook (example: http://192.168.1.7/gb/index.php?usr=newusername).
 
-If you are on UNIX, you must make the entries file writeable and readable for everyone (0666), otherwise PHP will not be able to write new entries and you will get errors.
+Remember to set the permissions of the entries file to 0666 if you are on UNIX or else you will get errors.
+
+# Replies
+
+To leave a reply to a guest's message, go to your entries text file database and after the guest's comment field you will find an empty one (e.g. <||>Guest Comment<||><||>) where the guest's comment replies will be stored. Just add some text inside that empty field and save the file.
