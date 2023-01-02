@@ -129,7 +129,7 @@ if($x - $y > 0) {
 		if (strlen($guest_c) > $max_length_comment) $error .= "<div class='alertBox-Error'>" . $messages['max_length_comment'] . "</div>";
 
 		// Check the math challenge answer to ""prevent"" spam.
-		if (!isset($guest_math) || empty($guest_math) || $guest_math != $guest_math) {
+		if (!isset($guest_math) || empty($guest_math) || $guest_math != $math_session) {
 			$error .= "<div class='alertBox-Error'>" . $messages['captcha_invalid'] . "</div>";
 		}
 
