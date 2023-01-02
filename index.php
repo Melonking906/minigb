@@ -139,7 +139,7 @@ if($x - $y > 0) {
 		}
 
 		// Reject post if the database file doesn't have write permissions.
-		if (!is_writable($data)) {
+		if (!is_writable($database . '.txt')) {
 			$error .= "<div class='alertBox-Error'>" . $messages['perms_invalid'] . "</div>";
 		}
 
