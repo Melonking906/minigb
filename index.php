@@ -149,7 +149,7 @@ if($x - $y > 0) {
         		$new_data = $guest_n. "<||>" . $guest_e . "<||>" . $guest_u . "<||>" . $guest_c . "<||>" . "" . "<||>" . $guest_date . "<||>" . $guest_unix_ts;
 
         		if (!empty($old_data)) {
-            			create_or_update_file($database . '.txt', $new_data . "\r" . $old_data); // Prepend data
+            			create_or_update_file($database . '.txt', $new_data . "\n" . $old_data); // Prepend data
         		} else {
             			create_or_update_file($database . '.txt', $new_data); // Insert data
         		}
@@ -212,8 +212,8 @@ if($x - $y > 0) {
 <?php
 
 if(!empty($data)) {
-	$data = trim($data, "\r");
-	$data = explode("\r", $data);
+	$data = trim($data, "\n");
+	$data = explode("\n", $data);
 
 	for($i = 0; $i < count($data); $i++) {
 		$item = explode("<||>", $data[$i]);
