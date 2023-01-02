@@ -29,6 +29,7 @@ $messages = array(
 	'max_length_email' => 'ERROR: Maximum character length for guest email is ' . $max_length_url  . '.',
 	'max_length_url' => 'ERROR: Maximum character length for guest URL is ' . $max_length_url  . '.',
 	'max_length_message' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment . '.',
+	'perms_invalid' => 'ERROR: This user&apos;s database file doesn&apos;t have set read/write permissions for all users (<b>0666</b>).',
 	'posted_message' => 'Message posted successfully!'
 );
 
