@@ -30,6 +30,7 @@ $messages = array(
 	'max_length_url' => 'ERROR: Maximum character length for guest URL is ' . $max_length_url  . '.',
 	'max_length_message' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment . '.',
 	'perms_invalid' => 'ERROR: This user&apos;s database file doesn&apos;t have set read/write permissions for all users (<b>0666</b>).',
+	'cookie_set' => 'ERROR: You have already sent a message in this browser, please wait 1 hour to send another one.',
 	'posted_message' => 'Message posted successfully!'
 );
 
