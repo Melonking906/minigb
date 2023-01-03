@@ -74,7 +74,7 @@ $powered_by = 1;
 $disable_entries = 0;
 
 // Version information
-$mgb_ver = "0.01a";
-$mgb_verdate = "27 Dec 2022";
+$mgb_ver = "0.02a";
+$mgb_verdate = "03 Jan 2023";
 
 ?>
