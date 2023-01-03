@@ -143,10 +143,25 @@ if($x - $y > 0) {
 			$error .= "<div class='alertBox-Error'>" . $messages['perms_invalid'] . "</div>";
 		}
 
+		// Reject post if cookie is set (only if $unique_cookie variable is enabled with "1" on cfg.php).
+		if ($unique_cookie > 0) {
+			if (isset($_COOKIE["guest_uniq"])) {
+				$error .= "<div class='alertBox-Error'>" . $messages['cookie_set'] . "</div>";
+			}
+		} else {
+			// nothing.
+		}
+
 		// If all the above is OK, then send.
 		if ($error === "") {
 			header("Location:" . $_SERVER['PHP_SELF'] . "?usr=$user&posted=1");
         		$new_data = $guest_n. "<||>" . $guest_e . "<||>" . $guest_u . "<||>" . $guest_c . "<||>" . "" . "<||>" . $guest_date . "<||>" . $guest_unix_ts;
+
+			if ($unique_cookie > 0) {
+				setcookie("guest_uniq", rand(), time() + 3600);
+			} else {
+				// nothing.
+			}
 
         		if (!empty($old_data)) {
             			create_or_update_file($database . '.txt', $new_data . "\n" . $old_data); // Prepend data
