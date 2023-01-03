@@ -73,6 +73,9 @@ $powered_by = 1;
 // Enable or disable new entries (this will be applied to all users)
 $disable_entries = 0;
 
+// Enable or disable cookie to allow one post comment per client (this will be applied for all users)
+$unique_cookie = 1;
+
 // Version information
 $mgb_ver = "0.02a";
 $mgb_verdate = "03 Jan 2023";
