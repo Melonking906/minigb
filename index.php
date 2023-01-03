@@ -164,7 +164,9 @@ $y = mt_rand(50, 100);
 	}
 	
 	// Display an success message if message was sent correctly.
-	if ($_GET['posted'] > 0) {
+	$get_posted = (isset($_GET['posted']) ? $_GET['posted'] : null);
+	
+	if ($get_posted > 0) {
 		if ($error === "") {
 			echo "<div class='alertBox-Success'>" . $messages['posted_message'] . "</div>";
 		}
