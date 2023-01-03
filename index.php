@@ -46,19 +46,9 @@ if (!is_readable($database . '.txt')) {
 
 $data = file_get_contents($database . '.txt');
 
-// Math CAPTCHA
-$math_session = htmlspecialchars($_SESSION['math']);
-
-$x = mt_rand(1, 50);
-$y = mt_rand(1, 50);
-
-if($x - $y > 0) {
-	$math = $x . ' - ' . $y;
-	$math_session = $x - $y;
-} else {
-	$math = $x . ' + ' . $y;
-	$math_session = $x + $y;
-}
+// Random values for robot verification
+$x = mt_rand(1, 30);
+$y = mt_rand(50, 100);
 
 ?>
 
@@ -93,7 +83,7 @@ if($x - $y > 0) {
 		$guest_c = send_input($_POST["guest_c"]);
 		$guest_unix_ts = date('U'); // only used for ID
 		$guest_date = date("Y-m-d H:m:s");
-		$guest_math = send_input($_POST["guest_math"]);
+		$guest_robot = send_input($_POST["guest_robot"]);
 
 		// Reject post if required values are empty.
 		if (empty($guest_n) || empty($guest_c)) {
@@ -128,8 +118,8 @@ if($x - $y > 0) {
 		if (strlen($guest_u) > $max_length_url) $error .= "<div class='alertBox-Error'>" . $messages['max_length_url'] . "</div>";
 		if (strlen($guest_c) > $max_length_comment) $error .= "<div class='alertBox-Error'>" . $messages['max_length_comment'] . "</div>";
 
-		// Check the math challenge answer to ""prevent"" spam.
-		if (!isset($guest_math) || empty($guest_math) || $guest_math != $math_session) {
+		// Reject robot/human verification if number is lower than $y.
+		if ($guest_robot < $y || empty($guest_robot)) {
 			$error .= "<div class='alertBox-Error'>" . $messages['captcha_invalid'] . "</div>";
 		}
 
@@ -212,9 +202,9 @@ if($x - $y > 0) {
 				}
 				?>
 				</div>
-
+				
 				<div class="signF5">
-					<?php echo $math; ?> = <input type="number" name="guest_math" autocomplete="off" style="width: 55px;">
+					Verify that you're a human: <input type="checkbox" name="guest_robot" value="<?php echo $x ?>" id="robot" onchange="sumValue();">
 				</div>
 
 				<div class="signF6">
@@ -299,4 +289,14 @@ if ($powered_by > 0) {
 
 ?>
 		</body>
+		
+		<script type="text/javascript">
+		function sumValue(){
+			if (robot.checked == true) {
+				robot.value =+ <?php echo $y ?>;
+			} else {
+				robot.value = <?php echo $x ?>;
+			}		
+		}
+		</script>
 	</html>
