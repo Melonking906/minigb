@@ -6,14 +6,14 @@ Simple, minimalistic and buggy (lol) retro-styled PHP7 guestbook script with bas
 
 NOTE: This script is currently in alpha and is not recommended for use on large websites.
 
-![minigb example screenshot // GeckoF's gb](https://geckof.dimension.sh/img/misc/2022-12-27_181517.png)
+![minigb example screenshot](https://geckof.dimension.sh/img/misc/2023-01-04_102307.png)
 
 # Installation
 
 ## Pre-requirements
 
 * PHP 7.x
-* A webserver w/ PHP support (e.g. [Apache](https://httpd.apache.org/), [nginx](https://nginx.org/), [lighttpd](https://lighttpd.net/))
+* A webserver w/ PHP support (e.g. [Apache](https://httpd.apache.org/), [nginx](https://nginx.org/) or [lighttpd](https://lighttpd.net/))
 
 Download this script from the Releases page (or you can just clone/download this entire repository if you wish) and upload it to your web server in a directory called "gb" or similar.
 
