@@ -8,9 +8,7 @@ based on the Flat-File Guestbook Script code by taufik-nurrohman
 (c) 2014 taufik-nurrohman
 */
 
-session_start();
-
-include "cfg.php";
+require_once("cfg.php");
 
 // Default variable values
 $guest_n = $guest_e = $guest_u = $guest_c = "";
