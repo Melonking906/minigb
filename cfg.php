@@ -19,7 +19,7 @@ $max_length_comment = 520;
 
 // Error/success messages
 $messages = array(
-	'database_missing' => 'ERROR: Database file not found for this user.',
+	'database_missing' => 'ERROR: Database file not found.',
 	'input_empty' => 'ERROR: Name and Comment cannot be empty!',
 	'url_invalid' => 'ERROR: Invalid URL format (use required: <b>http://example.org/</b>).',
 	'email_invalid' => 'ERROR: Invalid Email format (use required: <b>example@example.org</b>).',
