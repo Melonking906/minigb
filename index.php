@@ -206,9 +206,13 @@ $y = mt_rand(50, 100);
 				<div class="signF5">
 					Verify that you're a human: <input type="checkbox" name="guest_robot" value="<?php echo $x ?>" id="robot" onchange="sumValue();">
 				</div>
-
+				
 				<div class="signF6">
 					<button type="submit">Submit!</button> <button type="reset">Reset</button>
+				</div>
+				
+				<div class="nojs">
+					<noscript><p style="color: red;">JAVASCRIPT DISABLED! CAPTCHA SYSTEM WILL NOT WORK.</p></noscript>
 				</div>
 			</form>
 
