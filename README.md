@@ -2,7 +2,7 @@
 
 ![minigb button](https://github.com/ThatRoboticFish/minigb/blob/main/img/minigb.gif?raw=true)
 
-Simple, minimalistic and buggy (lol) retro-styled PHP7 guestbook script with basic ""multi-user"" support and without mySQL. Based in the [Flat-File Guestbook Script](https://github.com/taufik-nurrohman/flat-file-guestbook) code and on IglooGB. Ideal to be placed in small iframes as I have done in my personal website.
+Simple, minimalistic and buggy (lol) retro-styled PHP7 guestbook script with basic ""multi-user"" support and without mySQL. Based in the [Flat-File Guestbook Script](https://github.com/taufik-nurrohman/flat-file-guestbook) code and on [IglooGB](https://gb.igloocafe.space/). Ideal to be placed in small iframes as I have done in my personal website.
 
 NOTE: This script is currently in alpha and is not recommended for use on large websites.
 
