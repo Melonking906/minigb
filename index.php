@@ -284,8 +284,8 @@ if(!empty($data)) {
 
 if ($powered_by > 0) {
 	echo "<div class='software'>\n";
-	echo "	<a href='https://github.com/ThatRoboticFish/minigb' target='_blank'><img src='img/minigb.gif'></a>\n";
-	echo "	<p><i>powered by <a href='https://github.com/ThatRoboticFish/minigb' target='_blank'>gecko-minigb v$mgb_ver</a> edited $mgb_verdate</i></p>\n";
+	echo "	<a href='$mgb_url' target='_blank'><img src='img/minigb.gif'></a>\n";
+	echo "	<p><i>powered by <a href='$mgb_url' target='_blank'>gecko-minigb v$mgb_ver</a> edited $mgb_verdate</i></p>\n";
 	echo "</div>\n";
 } else {
 	// nothing.
