@@ -79,5 +79,6 @@ $unique_cookie = 1;
 // Version information
 $mgb_ver = "0.02a";
 $mgb_verdate = "03 Jan 2023";
+$mgb_url = "https://github.com/ThatRoboticFish/minigb";
 
 ?>
