@@ -283,6 +283,8 @@ if ($powered_by > 0) {
 	echo "</div>\n";
 }
 
+}
+									   
 ?>
 		</body>
 		
