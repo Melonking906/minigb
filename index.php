@@ -136,8 +136,6 @@ $y = mt_rand(50, 100);
 			if (isset($_COOKIE["guest_uniq"])) {
 				$error .= "<div class='alertBox-Error'>" . $messages['cookie_set'] . "</div>";
 			}
-		} else {
-			// nothing.
 		}
 
 		// If all the above is OK, then send.
@@ -147,8 +145,6 @@ $y = mt_rand(50, 100);
 
 			if ($unique_cookie > 0) {
 				setcookie("guest_uniq", rand(), time() + 3600);
-			} else {
-				// nothing.
 			}
 
         		if (!empty($old_data)) {
@@ -248,7 +244,7 @@ if(!empty($data)) {
 			}
 		?>
 
-		<i class='date'>wroted at <b><time datetime='<?php echo gmdate('c', strtotime($item[5])) ?>'><?php echo gmdate('F d, Y H:i A', strtotime($item[5]))?></time> UTC</i></b>:</p>
+		<i class='date'>wrote on <b><time datetime='<?php echo gmdate('c', strtotime($item[5])) ?>'><?php echo gmdate('F d, Y H:i A', strtotime($item[5]))?></time> UTC</i></b>:</p>
 
 		<?php
 
@@ -268,8 +264,6 @@ if(!empty($data)) {
 
 		if(!empty($item[4])) {
 			echo "<p><i>Owner reply: " . $item[4] . "</i></p>\n";
-		} else {
-			// nothing.
 		}
 
 		echo "</div>\n\n";
@@ -287,8 +281,6 @@ if ($powered_by > 0) {
 	echo "	<a href='$mgb_url' target='_blank'><img src='img/minigb.gif'></a>\n";
 	echo "	<p><i>powered by <a href='$mgb_url' target='_blank'>gecko-minigb v$mgb_ver</a> edited $mgb_verdate</i></p>\n";
 	echo "</div>\n";
-} else {
-	// nothing.
 }
 
 ?>
