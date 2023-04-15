@@ -10,6 +10,9 @@ based on the Flat-File Guestbook Script code by taufik-nurrohman
 
 require_once("cfg.php");
 
+// Version date conversion
+$mgb_verdate = date('d M Y', strtotime($mgb_verdate));
+
 // Default variable values
 $guest_n = $guest_e = $guest_u = $guest_c = "";
 
@@ -244,7 +247,7 @@ if(!empty($data)) {
 			}
 		?>
 
-		<i class='date'>wrote on <b><time datetime='<?php echo gmdate('c', strtotime($item[5])) ?>'><?php echo gmdate('F d, Y H:i A', strtotime($item[5]))?></time> UTC</i></b>:</p>
+		<i class='date'>wrote on <b><?php echo gmdate('F d, Y H:i A', strtotime($item[5]))?> UTC</i></b>:</p>
 
 		<?php
 
