@@ -82,8 +82,8 @@ $y = mt_rand(50, 100);
 		$guest_e = send_input($_POST["guest_e"]);
 		$guest_u = send_input($_POST["guest_u"]);
 		$guest_c = send_input($_POST["guest_c"]);
-		$guest_unix_ts = date('U'); // only used for ID
-		$guest_date = date("Y-m-d H:m:s");
+		$guest_unix_ts = gmdate('U'); // only used for ID
+		$guest_date = gmdate("Y-m-d H:m:s");
 		$guest_robot = send_input($_POST["guest_robot"]);
 
 		// Reject post if required values are empty.
@@ -247,7 +247,7 @@ if(!empty($data)) {
 			}
 		?>
 
-		<i class='date'>wrote on <b><?php echo gmdate('F d, Y H:i A', strtotime($item[5]))?> UTC</i></b>:</p>
+		<i class='date'>wrote on <b><?php echo gmdate('F d, Y H:i A', strtotime($item[5])) ?> UTC</i></b>:</p>
 
 		<?php
 
