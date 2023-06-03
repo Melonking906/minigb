@@ -12,7 +12,7 @@ NOTE: This script is currently in alpha and is not recommended for use on large 
 
 ## Pre-requirements
 
-* PHP 7.x
+* PHP 7.x/8.x
 * A webserver w/ PHP support (e.g. [Apache](https://httpd.apache.org/), [nginx](https://nginx.org/) or [lighttpd](https://lighttpd.net/))
 
 Download this script from the Releases page (or you can just clone/download this entire repository if you wish) and upload it to your web server in a directory called "gb" or similar.
