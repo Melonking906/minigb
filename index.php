@@ -225,9 +225,8 @@ if(!empty($data)) {
 
 	for($i = 0; $i < count($data); $i++) {
 		$item = explode("<||>", $data[$i]);
-
 		// Uncomment for debug array values.
-		//echo var_dump($item);
+		#echo var_dump($item);
 
 		echo "<div class='guestComment' id='guest-" . $item[6] . "'>";
 
@@ -236,13 +235,13 @@ if(!empty($data)) {
 		<p><img src='img/icons/user.png' class='icons'> <b><?php echo $item[0] ?></b>
 		
 		<?php
-			if($item[2] === "") {
-			} else {
+			// Display guest website URL
+			if($item[2] === "") { } else {
 				echo " (<a href='" . $item[2] . "' rel='nofollow' target='_blank'><img src='img/icons/world.png' class='icons'></a>)";
 			}
 
-			if($item[1] === "") {
-			} else {
+			// Display guest email address
+			if($item[1] === "") { } else {
 				echo " (<a href='mailto:" . $item[1] . "'><img src='img/icons/email.png' class='icons'></a>)";
 			}
 		?>
