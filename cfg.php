@@ -76,9 +76,14 @@ $disable_entries = 0;
 // Enable or disable cookie to allow one post comment per client (this will be applied for all users)
 $unique_cookie = 1;
 
+// Enable or disable user listing on index.php
+$user_listing = 1;
+
+// Enable or disable Swatch time on message dates
+// https://wiki.melonland.net/swatch_time
+$swatch = 1;
+
 // Version information
 $mgb_ver = "0.02a";
 $mgb_verdate = "2023-01-03";
 $mgb_url = "https://github.com/ThatRoboticFish/minigb";
-
-?>
