@@ -9,6 +9,7 @@ based on the Flat-File Guestbook Script code by taufik-nurrohman
 */
 
 require_once("cfg.php");
+require_once("lib/swatch.php");
 
 // Version date conversion
 $mgb_verdate = date('d M Y', strtotime($mgb_verdate));
@@ -246,7 +247,7 @@ if(!empty($data)) {
 			}
 		?>
 
-		<i class='date'>wrote on <b><?php echo gmdate('F d, Y H:i A', strtotime($item[5])) ?> UTC</i></b>:</p>
+		<i class='date'>wrote on <b><?php echo gmdate('F d, Y H:i A', strtotime($item[5])) ?> UTC <?php if ($swatch > 0): ?><?php echo "@" . GetSwatchTime(true, $item[5]); ?><?php endif; ?></i></b>:</p>
 
 		<?php
 
