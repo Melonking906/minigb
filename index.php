@@ -184,7 +184,7 @@ $y = mt_rand(50, 100);
 
 			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); echo "?usr=$user"; ?>" method="post" name="signForm">
 				<div class="signF1">
-					<input type="name" name="guest_n" style="width: 135px" placeholder="Your name" maxlength="<?php echo $max_length_name ?>" oninput="this.value=this.value.slice(0,this.maxLength)"> <input type="email" name="guest_e" style="width: 163px;" placeholder="Your e-mail (optional)" maxlength="<?php echo $max_length_email ?>" oninput="this.value=this.value.slice(0,this.maxLength)">
+					<input type="name" name="guest_n" style="width: 135px" placeholder="Your name" maxlength="<?php echo $max_length_name ?>" oninput="this.value=this.value.slice(0,this.maxLength)" required> <input type="email" name="guest_e" style="width: 163px;" placeholder="Your e-mail (optional)" maxlength="<?php echo $max_length_email ?>" oninput="this.value=this.value.slice(0,this.maxLength)">
 				</div>
 
 				<div class="signF2">
@@ -192,7 +192,7 @@ $y = mt_rand(50, 100);
 				</div>
 
 				<div class="signF3">
-					<textarea name="guest_c" id="guest_c" style="resize: none; width: 310px; height: 136px;" placeholder="Type here your comment..." maxlength="<?php echo $max_length_comment ?>"></textarea>
+					<textarea name="guest_c" id="guest_c" style="resize: none; width: 310px; height: 136px;" placeholder="Type here your comment..." maxlength="<?php echo $max_length_comment ?>" required></textarea>
 				</div>
 
 				<div class="signF4">
