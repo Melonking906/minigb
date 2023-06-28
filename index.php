@@ -247,7 +247,7 @@ if(!empty($data)) {
 			}
 		?>
 
-		<i class='date'>wrote on <b><?php echo gmdate('F d, Y H:i A', strtotime($item[5])) ?> UTC <?php if ($swatch > 0): ?><?php echo "@" . GetSwatchTime(true, $item[5]); ?><?php endif; ?></i></b>:</p>
+		<i class='date'>wrote on <b><?php echo gmdate('F d, Y H:i A', strtotime($item[5])) ?> UTC <?php if ($swatch > 0): ?><?php echo "@" . GetSwatchTime(true, $item[5]); ?><?php endif; ?></b></i>:</p>
 
 		<?php
 
