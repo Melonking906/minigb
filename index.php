@@ -55,24 +55,24 @@ $y = mt_rand(50, 100);
 ?>
 
 <!DOCTYPE html>
-	<html>
-		<head>
-			<title><?php echo $user ?>'s guestbook (gecko-minigb v<?php echo $mgb_ver ?>)</title>
+<html>
+	<head>
+		<title><?php echo $user ?>'s guestbook (gecko-minigb v<?php echo $mgb_ver ?>)</title>
 
-			<meta name="robots" content="noindex, nofollow">
-			<meta charset="UTF-8">
+		<meta name="robots" content="noindex, nofollow">
+		<meta charset="UTF-8">
 
-			<link rel="stylesheet" href="<?php echo $style ?>.css">
+		<link rel="stylesheet" href="<?php echo $style ?>.css">
 
-			<script type="text/javascript">
-			function setSmiley(which) {
-				document.signForm.guest_c.value += which+" ";
-				document.signForm.guest_c.focus();
-			}
-			</script>
-		</head>
+		<script type="text/javascript">
+		function setSmiley(which) {
+			document.signForm.guest_c.value += which+" ";
+			document.signForm.guest_c.focus();
+		}
+		</script>
+	</head>
 
-		<body>
+	<body>
 
 <?php
 
@@ -182,41 +182,41 @@ $y = mt_rand(50, 100);
 
 ?>
 
-			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); echo "?usr=$user"; ?>" method="post" name="signForm">
-				<div class="signF1">
-					<input type="name" name="guest_n" style="width: 135px" placeholder="Your name" maxlength="<?php echo $max_length_name ?>" oninput="this.value=this.value.slice(0,this.maxLength)" required> <input type="email" name="guest_e" style="width: 163px;" placeholder="Your e-mail (optional)" maxlength="<?php echo $max_length_email ?>" oninput="this.value=this.value.slice(0,this.maxLength)">
-				</div>
+		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); echo "?usr=$user"; ?>" method="post" name="signForm">
+			<div class="signF1">
+				<input type="name" name="guest_n" style="width: 135px" placeholder="Your name" maxlength="<?php echo $max_length_name ?>" oninput="this.value=this.value.slice(0,this.maxLength)" required> <input type="email" name="guest_e" style="width: 163px;" placeholder="Your e-mail (optional)" maxlength="<?php echo $max_length_email ?>" oninput="this.value=this.value.slice(0,this.maxLength)">
+			</div>
 
-				<div class="signF2">
-					<input type="url" name="guest_u" style="width: 309.5px;" placeholder="Your website/URL (optional)" maxlength="<?php echo $max_length_url ?>" oninput="this.value=this.value.slice(0,this.maxLength)">
-				</div>
+			<div class="signF2">
+				<input type="url" name="guest_u" style="width: 309.5px;" placeholder="Your website/URL (optional)" maxlength="<?php echo $max_length_url ?>" oninput="this.value=this.value.slice(0,this.maxLength)">
+			</div>
 
-				<div class="signF3">
-					<textarea name="guest_c" id="guest_c" style="resize: none; width: 310px; height: 136px;" placeholder="Type here your comment..." maxlength="<?php echo $max_length_comment ?>" required></textarea>
-				</div>
+			<div class="signF3">
+				<textarea name="guest_c" id="guest_c" style="resize: none; width: 310px; height: 136px;" placeholder="Type here your comment..." maxlength="<?php echo $max_length_comment ?>" required></textarea>
+			</div>
 
-				<div class="signF4">
-				<?php
-				for ($f = 0; $f < count($smileys); $f++) {
-					echo "<a href='javascript:setSmiley(&quot;$smileys[$f]&quot;)'><img src='$smileys_dir/$smileys_img[$f].gif' alt='$smileys[$f]' border='0'></a>\n";
-				}
-				?>
-				</div>
+			<div class="signF4">
+			<?php
+			for ($f = 0; $f < count($smileys); $f++) {
+				echo "<a href='javascript:setSmiley(&quot;$smileys[$f]&quot;)'><img src='$smileys_dir/$smileys_img[$f].gif' alt='$smileys[$f]' border='0'></a>\n";
+			}
+			?>
+			</div>
 				
-				<div class="signF5">
-					Verify that you're a human: <input type="checkbox" name="guest_robot" value="<?php echo $x ?>" id="robot" onchange="sumValue();">
-				</div>
+			<div class="signF5">
+				Verify that you're a human: <input type="checkbox" name="guest_robot" value="<?php echo $x ?>" id="robot" onchange="sumValue();">
+			</div>
 				
-				<div class="signF6">
-					<button type="submit">Submit!</button> <button type="reset">Reset</button>
-				</div>
-				
-				<div class="nojs">
-					<noscript><p style="color: red;">JAVASCRIPT DISABLED! CAPTCHA SYSTEM WILL NOT WORK.</p></noscript>
-				</div>
-			</form>
+			<div class="signF6">
+				<button type="submit">Submit!</button> <button type="reset">Reset</button>
+			</div>
 
-			<hr>
+			<div class="nojs">
+				<noscript><p style="color: red;">JAVASCRIPT DISABLED! CAPTCHA SYSTEM WILL NOT WORK.</p></noscript>
+			</div>
+		</form>
+
+		<hr>
 
 <?php
 
@@ -226,8 +226,10 @@ if(!empty($data)) {
 
 	for($i = 0; $i < count($data); $i++) {
 		$item = explode("<||>", $data[$i]);
-		// Uncomment for debug array values.
-		#echo var_dump($item);
+
+		if ($dump_entries > 0) {
+			echo var_dump($item);
+		}
 
 		echo "<div class='guestComment' id='guest-" . $item[6] . "'>";
 
@@ -286,11 +288,8 @@ if ($powered_by > 0) {
 	echo "</div>\n";
 }
 
-}
-									   
 ?>
-		</body>
-		
+
 		<script type="text/javascript">
 		function sumValue(){
 			if (robot.checked == true) {
@@ -300,4 +299,5 @@ if ($powered_by > 0) {
 			}		
 		}
 		</script>
-	</html>
+	</body>
+</html>
