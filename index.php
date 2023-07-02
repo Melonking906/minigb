@@ -36,8 +36,8 @@ if (isset($_GET['usr']) && !empty($_GET['usr'])) {
 	if (file_exists($config)) {
 		$config_data = parse_ini_file($config, true);
 		// Load user config variables from INI file
-		$disable_entries = isset($config['booleans']['disable_entries']) ? $config['booleans']['disable_entries'] : false;
-		$swatch = isset($config['booleans']['swatch']) ? $config['booleans']['swatch'] : false;
+		$disable_entries = isset($config_data['booleans']['disable_entries']) ? $config_data['booleans']['disable_entries'] : false;
+		$swatch = isset($config_data['booleans']['swatch']) ? $config_data['booleans']['swatch'] : false;
 	}
 } else {
 	// If "usr" is not set or empty, use the default style
