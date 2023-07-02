@@ -19,3 +19,7 @@ a, a:visited {
 a:hover {
 	color: red;
 }
+
+.software>p {
+	margin-top: -2px;
+}
