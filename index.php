@@ -28,13 +28,17 @@ if (isset($_GET['usr']) && !empty($_GET['usr'])) {
 	$user = $_GET['usr'];
 
 	$database = $users_dir . '/entries_' . $user;
-	$data = file_get_contents($database . '.txt');
+	if (file_exists($database)) {
+		$data = file_get_contents($database . '.txt');
+	}
 	$style = $users_dir . '/style_' . $user;
-	$config = parse_ini_file($users_dir . '/conf_' . $user . '.ini', true);
-
-	// Load user config variables from INI file
-	$disable_entries = $config['booleans']['disable_entries'];
-	$swatch = $config['booleans']['swatch'];
+	$config = $users_dir . '/conf_' . $user . '.ini';
+	if (file_exists($config)) {
+		$config_data = parse_ini_file($config, true);
+		// Load user config variables from INI file
+		$disable_entries = isset($config['booleans']['disable_entries']) ? $config['booleans']['disable_entries'] : false;
+		$swatch = isset($config['booleans']['swatch']) ? $config['booleans']['swatch'] : false;
+	}
 } else {
 	// If "usr" is not set or empty, use the default style
 	$style = $default_css_fn;
