@@ -11,7 +11,7 @@ NOTE: This script is currently in alpha and is not recommended for use on large 
 
 ## Pre-requirements
 * PHP 7.x/8.x
-* A webserver w/ PHP support (e.g. [Apache](https://httpd.apache.org/), [nginx](https://nginx.org/) or [lighttpd](https://lighttpd.net/))
+* A web server w/ PHP support (e.g. [Apache](https://httpd.apache.org/), [nginx](https://nginx.org/) or [lighttpd](https://lighttpd.net/))
 
 Download this script from the Releases page (or you can just clone/download this entire repository if you wish) and upload it to your web server in a directory called "gb" or similar. After that, you can test by visiting your new gecko-minigb installation in your web browser by going to the IP address/domain of your web server and on the directory where you have installed this (e.g. http://192.168.1.7/gb/ or http://localhost/gb/).
 
@@ -22,10 +22,10 @@ To create new users, go to the "users" directory and copy those 3 files found th
 
 ![User Listing example](https://media.discordapp.net/attachments/972204450456428554/1124868782972751924/image.png)
 
-All users can also be loaded from the URL by using the "usr" query string (e.g. http://localhost/gb/index.php?usr=example or http://localhost/gb/?usr=example if your webserver knows what index.php is).
+All users can also be loaded from the URL by using the "usr" query string (e.g. http://localhost/gb/index.php?usr=example or http://localhost/gb/?usr=example if your web server knows what index.php is).
 
 # Replies
-To leave a reply to a guest's message, go to your entries text file database and after the guest's comment field you will find an empty one (e.g. <||>Guest Comment<||><||>) where the guest's comment replies will be stored. Just add some text inside that empty field and save the file. It should look something like this:
+To leave a reply to a guest's message, go to your entries text file database and after the guest's comment field you will find an empty one (e.g. <||>Guest Comment<||><||>) where guest comment replies will be stored. Just add some text inside that empty field and save the file. It should look something like this:
 
 ![Demo Comment/Reply](https://geckof.dimension.sh/img/misc/minigb_demo_reply.jpg)
 
