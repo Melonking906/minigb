@@ -1,0 +1,21 @@
+/* Default CSS stylesheet, only used for pages like user listing. */
+/* For guestbook pages, please go to "default_gb.css". */
+/* Please don't remove this file. */
+
+html, body {
+	background-color: black;
+	color: white;
+}
+ 
+hr {
+	border: 1px ridge black;
+	margin-top: 1.3em;
+}
+
+a, a:visited {
+	color: lightblue;
+}
+
+a:hover {
+	color: red;
+}

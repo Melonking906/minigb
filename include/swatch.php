@@ -2,6 +2,8 @@
 # https://wiki.melonland.net/swatch_time
 # Returns the current Swatch time with microbeats
 
+require_once(__DIR__ . "/redir_include.php");
+
 function GetSwatchTime($showDecimals = true, $dateTime) {
 	// Get time in UTC+1 (Do not Change!)
 	$now = new DateTime($dateTime, new DateTimeZone("UTC"));

@@ -1,3 +1,9 @@
+/* Default CSS stylesheet for guestbook pages. */
+/* If you are looking for the user listing CSS, it's in "default.css". */
+
+/* Be careful, all changes here will be applied for all users. Please go to your user CSS for make your own guestbook style changes. */
+/* Please don't remove this file. */
+
 html, body {
 	background-color: white;
 	color: black;
@@ -8,6 +14,7 @@ textarea, input {
 	background-color: white;
 	color: black;
 	font-family: monospace;
+	resize: none;
 }
 
 button {
@@ -54,12 +61,16 @@ a:hover {
 .signF6 {
 	margin-top: 10px;
 	margin-bottom: -5px;
+	width: 20em;
+}
+
+.nojs {
+	margin-bottom: -8px;
 }
 
 .alertBox-Success {
 	border-radius: 5px;
 	border: 2px ridge limegreen;
-	color: limegreen;
 	padding: 5px 5px;
 	margin-bottom: 10px;
 }
