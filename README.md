@@ -4,7 +4,7 @@ Simple, minimalistic and buggy (lol) retro-styled PHP7 guestbook script with bas
 
 NOTE: This script is currently in alpha and is not recommended for use on large websites.
 
-![minigb example screenshot](https://geckof.dimension.sh/img/misc/2023-01-04_102307.png)
+![minigb example screenshot](https://geckof.dimension.sh/img/misc/minigb_default.png)
 
 # Installation
 
@@ -19,7 +19,7 @@ If you are on UNIX, you must make the entries file writeable and readable for ev
 # New users
 To create new users, go to the "users" directory and copy those 3 files found there or rename them, replacing "example" with your new user name. After that, visit your gecko-minigb installation from your web browser and your new user should appear in the user listing (as long as it's not disabled from cfg.php) like in the example below.
 
-![User Listing example](https://media.discordapp.net/attachments/972204450456428554/1124868782972751924/image.png)
+![User Listing example](https://geckof.dimension.sh/img/misc/minigb_usrlist.png)
 
 All users can also be loaded from the URL by using the "usr" query string (e.g. http://localhost/gb/index.php?usr=example or http://localhost/gb/?usr=example if your web server knows what index.php is).
 
