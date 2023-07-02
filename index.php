@@ -27,9 +27,9 @@ $guest_n = $guest_e = $guest_u = $guest_c = "";
 if (isset($_GET['usr']) && !empty($_GET['usr'])) {
 	$user = $_GET['usr'];
 
-	$database = $users_dir . '/entries_' . $user;
+	$database = $users_dir . '/entries_' . $user . '.txt';
 	if (file_exists($database)) {
-		$data = file_get_contents($database . '.txt');
+		$data = file_get_contents($database);
 	}
 	$style = $users_dir . '/style_' . $user;
 	$config = $users_dir . '/conf_' . $user . '.ini';
@@ -46,15 +46,15 @@ if (isset($_GET['usr']) && !empty($_GET['usr'])) {
 }
 
 // Check if the database file exists
-$database_exists = file_exists($database . '.txt');
+$database_exists = file_exists($database);
 if (!$database_exists) {
 	$data = false;
 } else {
-	$old_data = file_get_contents($database . '.txt');
+	$old_data = file_get_contents($database);
 }
 
 // Kill the script if the database file doesn't have read permissions
-if ($database_exists && !is_readable($database . '.txt')) {
+if ($database_exists && !is_readable($database)) {
 	echo $messages['perms_invalid'];
 	return false;
 	exit;
@@ -157,7 +157,7 @@ $robot_randid = bin2hex(random_bytes(15));
 		}
 
 		// Reject post if the database file doesn't have write permissions
-		if (!is_writable($database . '.txt')) {
+		if (!is_writable($database)) {
 			$error .= "<div class='alertBox-Error'>" . $messages['perms_invalid'] . "</div>";
 		}
 
@@ -183,9 +183,9 @@ $robot_randid = bin2hex(random_bytes(15));
 			}
 
         		if (!empty($old_data)) {
-            			create_or_update_file($database . '.txt', $new_data . "\n" . $old_data); // Prepend data
+            			create_or_update_file($database, $new_data . "\n" . $old_data); // Prepend data
         		} else {
-            			create_or_update_file($database . '.txt', $new_data); // Insert data
+            			create_or_update_file($database, $new_data); // Insert data
         		}
 		} else {
 			echo $error;
