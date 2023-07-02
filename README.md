@@ -1,7 +1,7 @@
 # gecko-minigb (aka minigb)
 ![minigb button](https://github.com/ThatRoboticFish/minigb/blob/main/img/minigb.gif?raw=true)
 
-Simple, minimalistic and buggy (lol) retro-styled PHP7 guestbook script with basic ""multi-user"" support and without mySQL. Based in the [Flat-File Guestbook Script](https://github.com/taufik-nurrohman/flat-file-guestbook) code and on [IglooGB](https://gb.igloocafe.space/). Ideal to be placed in small iframes.
+Simple, minimalistic and buggy (lol) retro-styled PHP7 guestbook script with basic multi-user system and without mySQL. Based in the [Flat-File Guestbook](https://github.com/taufik-nurrohman/flat-file-guestbook) code and on [IglooGB](https://gb.igloocafe.space/). Ideal to be placed in small iframes.
 
 NOTE: This script is currently in alpha and is not recommended for use on large websites.
 
@@ -34,7 +34,7 @@ An example of an comment reply can be found in the default entries text file dat
 # Options
 Most of the global settings are in the "cfg.php" file, and the user settings are in the "users" folder with the name "conf_username.ini".
 
-At the moment, only these two options are available for the users:
+At the moment, only these two options are available for users:
 
 ```
 [booleans]
