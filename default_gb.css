@@ -71,6 +71,7 @@ a:hover {
 .alertBox-Success {
 	border-radius: 5px;
 	border: 2px ridge limegreen;
+	color: limegreen;
 	padding: 5px 5px;
 	margin-bottom: 10px;
 }
