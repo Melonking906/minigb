@@ -14,7 +14,7 @@
 	<?php
 		if ($powered_by == 1) {
 			echo '<a href="'. $mgb_url .'" target="_blank"><img src="img/minigb.gif"></a>';
-			echo '<p style="margin-top: -4px;"><i><a href="'. $mgb_url .'" target="_blank">'. $mgb_name .' v'. $mgb_ver .'</a> edited '. $mgb_verdate .'</i></p>';
+			echo '<p class="software"><i><a href="'. $mgb_url .'" target="_blank">'. $mgb_name .' v'. $mgb_ver .'</a> edited '. $mgb_verdate .'</i></p>';
 		}
 
 		if ($user_listing == 1) {
