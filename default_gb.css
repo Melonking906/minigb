@@ -89,7 +89,7 @@ a:hover {
 	word-break: break-word; /* for fix large comments that brokes the page */
 }
 
-.date {
+.date, .debug {
 	font-size: small;
 }
 
