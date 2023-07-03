@@ -19,7 +19,7 @@ $user_listing = 1;
 $dump_entries = 0;
 
 # Show debug information (execution time and mem usage)
-$debug_info = 1;
+$debug_info = 0;
 
 /* Directories */
 
