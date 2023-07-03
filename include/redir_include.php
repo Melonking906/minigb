@@ -6,5 +6,6 @@ require_once(__DIR__ . "/../cfg.php");
 
 if (!defined('IncludeAccess')) {
 	header("Location: ../" . $script_fn);
+	exit;
 }
 ?>
