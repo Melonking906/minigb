@@ -18,6 +18,9 @@ $user_listing = 1;
 # Show variable dumps of entries array (for debugging)
 $dump_entries = 0;
 
+# Show debug information (execution time and mem usage)
+$debug_info = 1;
+
 /* Directories */
 
 # Smileys directory
