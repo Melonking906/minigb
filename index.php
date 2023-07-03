@@ -241,7 +241,7 @@ $robot_randid = bin2hex(random_bytes(15));
 			</div>
 
 			<div class="nojs">
-				<noscript><p style="color: red;">JAVASCRIPT DISABLED! CAPTCHA SYSTEM WILL NOT WORK.</p></noscript>
+				<noscript><p>JAVASCRIPT DISABLED! CAPTCHA SYSTEM WILL NOT WORK.</p></noscript>
 			</div>
 		</form>
 
