@@ -46,15 +46,14 @@ if (isset($_GET['usr']) && !empty($_GET['usr'])) {
 }
 
 // Check if the database file exists
-$database_exists = file_exists($database);
-if (!$database_exists) {
+if (!file_exists($database)) {
 	$data = false;
 } else {
 	$old_data = file_get_contents($database);
 }
 
 // Kill the script if the database file doesn't have read permissions
-if ($database_exists && !is_readable($database)) {
+if (file_exists($database) && !is_readable($database)) {
 	echo $messages['perms_invalid'];
 	return false;
 	exit;
@@ -117,6 +116,8 @@ $robot_randid = bin2hex(random_bytes(15));
 		$guest_unix_ts = gmdate('U'); // only used for ID
 		$guest_date = gmdate("Y-m-d H:m:s");
 		$guest_robot = send_input($_POST["guest_robot"]);
+
+		date_default_timezone_set("UTC");
 
 		// Reject post if required values are empty
 		if (empty($guest_n) || empty($guest_c)) {
