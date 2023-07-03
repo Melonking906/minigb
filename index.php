@@ -12,6 +12,8 @@ require_once("cfg.php");
 define('IncludeAccess', TRUE);
 require_once("include/swatch.php");
 
+date_default_timezone_set("UTC");
+
 // Get version information
 $verinfo = parse_ini_file($verinfo_fn, true);
 $mgb_ver = $verinfo['version']['name'];
@@ -116,8 +118,6 @@ $robot_randid = bin2hex(random_bytes(15));
 		$guest_unix_ts = gmdate('U'); // only used for ID
 		$guest_date = gmdate("Y-m-d H:m:s");
 		$guest_robot = send_input($_POST["guest_robot"]);
-
-		date_default_timezone_set("UTC");
 
 		// Reject post if required values are empty
 		if (empty($guest_n) || empty($guest_c)) {
