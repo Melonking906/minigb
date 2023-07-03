@@ -14,6 +14,9 @@ require_once("include/swatch.php");
 
 date_default_timezone_set("UTC");
 
+// For debugging
+$start_time = microtime(true);
+
 // Get version information
 $verinfo = parse_ini_file($verinfo_fn, true);
 $mgb_ver = $verinfo['version']['name'];
@@ -309,6 +312,30 @@ if ($powered_by == 1) {
 	echo "	<p><i>powered by <a href='" . $mgb_url ."' target='_blank'>" . $mgb_name . " v" . $mgb_ver . "</a> edited " . $mgb_verdate . "</i></p>\n";
 	echo "</div>\n";
 }
+
+// For debugging x2
+$mem_usage = memory_get_peak_usage(false);
+function mem_sizeformat($size) {
+	$units = array('B', 'KB', 'MB', 'GB', 'TB');
+	$i = 0;
+
+	while ($size >= 1024 && $i < 4) {
+		$size /= 1024;
+		$i++;
+	}
+
+	return round($size, 2) . ' ' . $units[$i];
+}
+$end_time = microtime(true);
+$exec_time = $end_time - $start_time;
+
+if ($debug_info == 1) {
+	echo "<div class='debug'>\n";
+	echo "	<p>execution time: " . number_format($exec_time, 10) . "<br>\n";
+	echo "	memory usage: " . mem_sizeformat($mem_usage) . "</p>\n";
+	echo "</div>\n";
+}
+
 ?>
 		<script type="text/javascript">
 		var robot = document.getElementById("<?php echo $robot_randid ?>");
