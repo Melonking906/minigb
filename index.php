@@ -1,7 +1,7 @@
 <?php
 /*
-gecko-minigb (or minigb) v0.03a by GeckoF
-based on the Flat-File Guestbook Script code by taufik-nurrohman
+gecko-minigb (or minigb) by GeckoF
+based on the Flat-File Guestbook code by taufik-nurrohman
 
 (c) 2022 GeckoF/Gecko Fish
 (c) 2014 taufik-nurrohman
