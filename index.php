@@ -235,9 +235,29 @@ $robot_randid = bin2hex(random_bytes(15));
 			?>
 			</div>
 
-			<div class="signF5">
-				Verify that you're a human: <input type="checkbox" name="guest_robot" value="<?php echo $x ?>" id="<?php echo $robot_randid ?>" onchange="sumValue();">
-			</div>
+			<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var div = document.createElement('div');
+				div.className = 'signF5';
+
+				var text = document.createTextNode('Verify that you\'re a human: ');
+				div.appendChild(text);
+
+				var checkbox = document.createElement('input');
+				checkbox.type = 'checkbox';
+				checkbox.name = 'guest_robot';
+				checkbox.id = '<?php echo $robot_randid ?>';
+				checkbox.value = '<?php echo $x ?>';
+				checkbox.addEventListener('change', function() {
+					sumValue(checkbox);
+				});
+				div.appendChild(checkbox);
+
+				var container = document.getElementById('captcha_dom');
+				container.appendChild(div);
+			});
+			</script>
+			<div id="captcha_dom"></div>
 
 			<div class="signF6">
 				<button type="submit">Submit!</button> <button type="reset">Reset</button>
@@ -338,8 +358,7 @@ if ($debug_info == 1) {
 
 ?>
 		<script type="text/javascript">
-		var robot = document.getElementById("<?php echo $robot_randid ?>");
-		function sumValue() {
+		function sumValue(robot) {
 			if (robot.checked == true) {
 				robot.value =+ <?php echo $y ?>;
 			} else {
