@@ -1,4 +1,4 @@
-<?php require_once(__DIR__ . "/redir_include.php"); ?>
+<?php require_once(__DIR__ . "/funcs.php"); ?>
 <!DOCTYPE html>
 <html>
 	<head>
