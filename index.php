@@ -10,7 +10,7 @@ based on the Flat-File Guestbook code by taufik-nurrohman
 require_once("cfg.php");
 
 define('IncludeAccess', TRUE);
-require_once("include/swatch.php");
+require_once("include/funcs.php");
 
 date_default_timezone_set("UTC");
 
