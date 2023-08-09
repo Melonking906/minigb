@@ -32,3 +32,16 @@ function GetSwatchTime($showDecimals = true, $dateTime) {
         	return floor(abs($seconds / $swatchBeatInSeconds));
 	}
 }
+
+# Memory size format conversion
+function mem_sizeformat($size) {
+	$units = array('B', 'KB', 'MB', 'GB', 'TB');
+	$i = 0;
+
+	while ($size >= 1024 && $i < 4) {
+		$size /= 1024;
+		$i++;
+	}
+
+	return round($size, 2) . ' ' . $units[$i];
+}
