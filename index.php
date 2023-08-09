@@ -335,17 +335,7 @@ if ($powered_by == 1) {
 
 // For debugging x2
 $mem_usage = memory_get_peak_usage(false);
-function mem_sizeformat($size) {
-	$units = array('B', 'KB', 'MB', 'GB', 'TB');
-	$i = 0;
 
-	while ($size >= 1024 && $i < 4) {
-		$size /= 1024;
-		$i++;
-	}
-
-	return round($size, 2) . ' ' . $units[$i];
-}
 $end_time = microtime(true);
 $exec_time = $end_time - $start_time;
 
