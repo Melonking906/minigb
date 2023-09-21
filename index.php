@@ -95,6 +95,7 @@ $robot_randid = bin2hex(random_bytes(15));
 		<!-- Robots and spiders should not index guestbooks on their search engines. -->
 		<meta name="robots" content="noindex, nofollow">
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=0.5">
 
 		<link rel="stylesheet" href="<?php echo $default_gb_css_fn ?>">
 		<?php if (!file_exists($style)): ?>
