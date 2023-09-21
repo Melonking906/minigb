@@ -277,7 +277,7 @@ if(!empty($data)) {
 	for($i = 0; $i < count($data); $i++) {
 		$item = explode("<||>", $data[$i]);
 
-		if ($dump_entries == 1) {
+		if ($debug_mode == 2 || $debug_mode > 1) {
 			echo var_dump($item);
 		}
 
@@ -339,7 +339,7 @@ $mem_usage = memory_get_peak_usage(false);
 $end_time = microtime(true);
 $exec_time = $end_time - $start_time;
 
-if ($debug_info == 1) {
+if ($debug_mode == 1) {
 	echo "<div class='debug'>\n";
 	echo "	<p>execution time: " . number_format($exec_time, 10) . "<br>\n";
 	echo "	memory usage: " . mem_sizeformat($mem_usage) . "</p>\n";
