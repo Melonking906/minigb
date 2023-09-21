@@ -15,11 +15,10 @@ $unique_cookie = 1;
 # Enable or disable user listing
 $user_listing = 1;
 
-# Show variable dumps of entries array (for debugging)
-$dump_entries = 0;
-
-# Show debug information (execution time and mem usage)
-$debug_info = 0;
+# Show debug information
+// 1: Execution time and mem usage
+// 2: Show variable dumps of entries array
+$debug_mode = 1;
 
 /* Directories */
 
