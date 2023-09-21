@@ -68,7 +68,7 @@ $messages = array(
 	'max_length_name' => 'ERROR: Maximum character length for guest name is ' . $max_length_name  . '.',
 	'max_length_email' => 'ERROR: Maximum character length for guest email is ' . $max_length_email  . '.',
 	'max_length_url' => 'ERROR: Maximum character length for guest URL is ' . $max_length_url  . '.',
-	'max_length_message' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment . '.',
+	'max_length_comment' => 'ERROR: Maximum character length for guest comments is ' . $max_length_comment . '.',
 	'cookie_set' => 'ERROR: You have already sent a message in this browser, please wait 1 hour to send another one.',
 	'posted_message' => 'Message posted successfully!'
 );
