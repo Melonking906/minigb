@@ -18,7 +18,7 @@ $user_listing = 1;
 # Show debug information
 // 1: Execution time and mem usage
 // 2: Show variable dumps of entries array
-$debug_mode = 1;
+$debug_mode = 0;
 
 /* Directories */
 
