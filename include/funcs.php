@@ -8,7 +8,7 @@ if (!defined('IncludeAccess')) {
 	exit;
 }
 
-# https://wiki.melonland.net/swatch_time
+# ...
 # Returns the current Swatch time with microbeats
 function GetSwatchTime($showDecimals = true, $dateTime) {
 	// Get time in UTC+1 (Do not Change!)
