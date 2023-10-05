@@ -1,3 +1,5 @@
+# I'M NOT GOING TO UPDATE THIS REPO FROM GITHUB ANYMORE, PLEASE GO TO https://codeberg.org/GeckoF/minigb INSTEAD.
+
 # ![minigb button](https://github.com/ThatRoboticFish/minigb/blob/main/img/minigb.gif?raw=true) gecko-minigb (aka minigb)
 
 Simple, minimalistic and buggy (lol) retro-styled PHP7 guestbook script with basic multi-user system and without mySQL. Based in the [Flat-File Guestbook](https://github.com/taufik-nurrohman/flat-file-guestbook) code and on [IglooGB](https://gb.igloocafe.space/). Ideal to be placed in small iframes.
